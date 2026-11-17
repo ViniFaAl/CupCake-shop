@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel de pedidos | Cupcake Shop</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/admin.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a class="logo" href="index.html">Cupcake Shop</a
+        ><a href="index.html">Ir para loja</a>
+      </div>
+    </header>
+    <main class="page-shell">
+      <h1>Painel de pedidos</h1>
+      <p class="page-intro">
+        Acompanhe os pedidos de demonstração e altere o status.
+      </p>
+      <div class="demo-banner">
+        Demonstração acadêmica: pedidos no SQLite local. A chave de acesso é
+        apenas uma proteção básica; não use dados reais.
+      </div>
+      <section class="panel">
+        <div class="field">
+          <label for="admin-key">Chave do administrador (padrão: demo123)</label
+          ><input
+            id="admin-key"
+            type="password"
+            autocomplete="off"
+            placeholder="Digite a chave"
+          />
+        </div>
+        <div class="form-actions">
+          <button class="primary-action" id="load-orders" type="button">
+            Carregar pedidos
+          </button>
+          <p id="admin-message" role="status"></p>
+        </div>
+        <h2>Pedidos registrados <span id="orders-count"></span></h2>
+        <div id="orders-list"></div>
+      </section>
+    </main>
+    <footer class="footer">&copy; 2026 Cupcake Shop. Projeto acadêmico.</footer>
+  </body>
+</html>

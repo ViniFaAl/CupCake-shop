@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Finalizar pedido | Cupcake Shop</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/checkout.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a class="logo" href="index.html">Cupcake Shop</a
+        ><a href="index.html">Voltar à loja</a>
+      </div>
+    </header>
+    <main class="page-shell">
+      <a class="back-link" href="index.html">← Continuar comprando</a>
+      <h1>Finalizar pedido</h1>
+      <p class="page-intro">Confira seus produtos e preencha seus dados.</p>
+      <div class="demo-banner">
+        Demonstração acadêmica: não há cobrança, envio real de pedidos ou
+        integração com pagamentos.
+      </div>
+      <div class="checkout-layout">
+        <section class="panel">
+          <h2>Dados do pedido</h2>
+          <form id="checkout-form">
+            <div class="form-grid two">
+              <div class="field">
+                <label for="customer-name">Nome completo *</label
+                ><input
+                  id="customer-name"
+                  name="name"
+                  required
+                  minlength="3"
+                  maxlength="100"
+                  autocomplete="name"
+                />
+              </div>
+              <div class="field">
+                <label for="customer-phone">Telefone *</label
+                ><input
+                  id="customer-phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  minlength="10"
+                  maxlength="20"
+                  autocomplete="tel"
+                  placeholder="(35) 99999-9999"
+                />
+              </div>
+            </div>
+            <h2 style="margin-top: 24px">Recebimento</h2>
+            <div class="choice-row">
+              <label
+                ><input type="radio" name="delivery" value="retirada" checked />
+                Retirar na loja</label
+              ><label
+                ><input type="radio" name="delivery" value="entrega" />
+                Entrega</label
+              >
+            </div>
+            <div id="delivery-fields" hidden>
+              <div class="delivery-notice" role="note">
+                📍 Entregas disponíveis somente na cidade de
+                <strong>Guapé – MG</strong>.
+              </div>
+              <div class="form-grid two">
+                <div class="field">
+                  <label for="street">Rua *</label
+                  ><input
+                    id="street"
+                    name="street"
+                    maxlength="140"
+                    autocomplete="address-line1"
+                    placeholder="Ex.: Rua das Flores"
+                  />
+                </div>
+                <div class="field">
+                  <label for="house-number">Número da casa *</label
+                  ><input
+                    id="house-number"
+                    name="house-number"
+                    maxlength="12"
+                    inputmode="text"
+                    placeholder="Ex.: 125"
+                  />
+                </div>
+                <div class="field">
+                  <label for="neighborhood">Bairro *</label
+                  ><input
+                    id="neighborhood"
+                    name="neighborhood"
+                    maxlength="80"
+                    autocomplete="address-level3"
+                    placeholder="Ex.: Centro"
+                  />
+                </div>
+                <div class="field">
+                  <label for="city">Cidade</label
+                  ><input
+                    id="city"
+                    value="Guapé – MG"
+                    readonly
+                    aria-readonly="true"
+                  />
+                </div>
+              </div>
+              <div class="field" style="margin-top: 14px">
+                <label for="complement">Complemento (opcional)</label
+                ><input
+                  id="complement"
+                  name="complement"
+                  maxlength="100"
+                  autocomplete="address-line2"
+                  placeholder="Ex.: Casa dos fundos, portão azul"
+                />
+              </div>
+              <p class="help-text">
+                Taxa de entrega não calculada nesta versão. Para a demonstração,
+                entrega e retirada têm o mesmo valor.
+              </p>
+            </div>
+            <div class="field" style="margin-top: 14px">
+              <label for="notes">Observações (opcional)</label
+              ><textarea
+                id="notes"
+                name="notes"
+                maxlength="500"
+                placeholder="Ex.: sem confeitos"
+              ></textarea>
+            </div>
+            <h2 style="margin-top: 24px">Pagamento demonstrativo</h2>
+            <div class="field">
+              <label for="payment">Forma de pagamento *</label
+              ><select id="payment" name="payment" required>
+                <option value="pix">Pix (simulado)</option>
+                <option value="cartao">Cartão (simulado)</option>
+              </select>
+            </div>
+            <p class="help-text">
+              Nenhum pagamento será processado. O pedido será registrado como
+              simulação.
+            </p>
+            <div class="form-actions">
+              <button class="primary-action" type="submit" id="submit-order">
+                Confirmar pedido simulado
+              </button>
+              <p id="form-error" class="error-message" role="alert" hidden></p>
+            </div>
+          </form>
+          <div
+            id="order-success"
+            class="success-message"
+            role="status"
+            hidden
+          ></div>
+        </section>
+        <aside class="panel">
+          <h2>Resumo do carrinho</h2>
+          <div id="checkout-items"></div>
+          <p class="order-total">
+            <span>Total</span><span id="checkout-total">R$ 0,00</span>
+          </p>
+          <p class="help-text">
+            Preços ilustrativos. Sem taxa de entrega nesta demonstração.
+          </p>
+        </aside>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2026 Cupcake Shop. Projeto acadêmico.</p>
+    </footer>
+  </body>
+</html>

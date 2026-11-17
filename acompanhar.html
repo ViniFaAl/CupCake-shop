@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Acompanhar pedido | Cupcake Shop</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/acompanhar.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a class="logo" href="index.html">Cupcake Shop</a
+        ><a href="index.html">Voltar à loja</a>
+      </div>
+    </header>
+    <main class="page-shell">
+      <h1>📦 Acompanhe seu pedido</h1>
+      <p class="page-intro">
+        Consulte o andamento do pedido usando somente o número recebido após a
+        compra.
+      </p>
+      <div class="demo-banner">
+        Demonstração acadêmica. Os status são atualizados pelo administrador e
+        não representam entregas reais.
+      </div>
+      <section class="panel tracking-panel">
+        <form id="tracking-form">
+          <div class="field">
+            <label for="order-id">Número do pedido</label
+            ><input
+              id="order-id"
+              required
+              placeholder="CS-XXXXXXXXXX"
+              autocomplete="off"
+            />
+          </div>
+          <button class="primary-action" type="submit">Consultar status</button>
+        </form>
+        <p id="tracking-error" class="error-message" role="alert" hidden></p>
+        <div id="tracking-result" hidden aria-live="polite">
+          <h2>Seu pedido</h2>
+          <p id="tracking-number"></p>
+          <p id="tracking-status" class="tracking-status"></p>
+          <p id="tracking-details"></p>
+          <div id="tracking-items"></div>
+          <p id="tracking-total" class="order-total"></p>
+          <button id="tracking-refresh" type="button" class="primary-action">
+            Atualizar status
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2026 Cupcake Shop. Projeto acadêmico.</p>
+    </footer>
+  </body>
+</html>

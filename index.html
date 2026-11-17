@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cupcake Shop - Cupcakes deliciosos feitos com carinho para você.">
+  <title>Cupcake Shop | Início</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <h1 class="logo">Cupcake Shop</h1>
+      <div class="header-actions">
+        <button class="cart-button" type="button" aria-label="Abrir carrinho" aria-controls="cart-drawer" aria-expanded="false">🛒 <span class="cart-count" aria-label="0 itens">0</span></button>
+        <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-navigation">☰</button>
+      </div>
+    </div>
+    <nav class="navigation" id="main-navigation" aria-label="Navegação principal" hidden>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#produtos">Nossos cupcakes</a></li>
+        <li><a href="#sobre">Sobre nós</a></li>
+        <li><a href="acompanhar.html">📦 Acompanhar pedido</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <h2 id="hero-title">Um doce momento para você!</h2>
+        <p>Cupcakes deliciosos, preparados com carinho para tornar seu dia especial.</p>
+        <a href="#produtos" class="hero-link">Conheça nossos cupcakes →</a>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/hero-cupcakes.jpg" alt="Cupcakes de diferentes sabores com coberturas decoradas" width="600" height="400">
+      </div>
+    </section>
+
+    <section class="products" id="produtos" aria-labelledby="products-title">
+      <h2 id="products-title">Nossos cupcakes</h2>
+      <p class="products-description">Escolha seu sabor favorito e deixe seu dia mais doce!</p>
+      <div class="products-grid">
+        <article class="product-card" data-id="chocolate" data-name="Chocolate" data-price="12" data-image="assets/images/cupcake-chocolate.jpg">
+          <img src="assets/images/cupcake-chocolate.jpg" alt="Cupcake de chocolate" loading="lazy">
+          <div class="product-info"><h3>Chocolate</h3><p class="product-price">R$ 12,00</p><button type="button" class="add-to-cart">Adicionar</button></div>
+        </article>
+        <article class="product-card" data-id="morango" data-name="Morango" data-price="12" data-image="assets/images/cupcake-morango.jpg">
+          <img src="assets/images/cupcake-morango.jpg" alt="Cupcake de morango" loading="lazy">
+          <div class="product-info"><h3>Morango</h3><p class="product-price">R$ 12,00</p><button type="button" class="add-to-cart">Adicionar</button></div>
+        </article>
+        <article class="product-card" data-id="limao" data-name="Limão" data-price="12" data-image="assets/images/cupcake-limao.jpg">
+          <img src="assets/images/cupcake-limao.jpg" alt="Cupcake de limão" loading="lazy">
+          <div class="product-info"><h3>Limão</h3><p class="product-price">R$ 12,00</p><button type="button" class="add-to-cart">Adicionar</button></div>
+        </article>
+        <article class="product-card" data-id="red-velvet" data-name="Red Velvet" data-price="14" data-image="assets/images/cupcake-red-velvet.jpg">
+          <img src="assets/images/cupcake-red-velvet.jpg" alt="Cupcake Red Velvet" loading="lazy">
+          <div class="product-info"><h3>Red Velvet</h3><p class="product-price">R$ 14,00</p><button type="button" class="add-to-cart">Adicionar</button></div>
+        </article>
+        <article class="product-card" data-id="cookies-cream" data-name="Cookies &amp; Cream" data-price="14" data-image="assets/images/cupcake-cookies-cream.jpg">
+          <img src="assets/images/cupcake-cookies-cream.jpg" alt="Cupcake Cookies and Cream" loading="lazy">
+          <div class="product-info"><h3>Cookies &amp; Cream</h3><p class="product-price">R$ 14,00</p><button type="button" class="add-to-cart">Adicionar</button></div>
+        </article>
+        <article class="product-card" data-id="caramelo" data-name="Caramelo" data-price="14" data-image="assets/images/cupcake-caramelo.jpg">
+          <img src="assets/images/cupcake-caramelo.jpg" alt="Cupcake de caramelo" loading="lazy">
+          <div class="product-info"><h3>Caramelo</h3><p class="product-price">R$ 14,00</p><button type="button" class="add-to-cart">Adicionar</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="sobre" aria-labelledby="about-title">
+      <h2 id="about-title">Sobre nós</h2>
+      <p>Na Cupcake Shop, acreditamos que pequenos doces podem criar grandes momentos.</p>
+    </section>
+  </main>
+
+  <footer class="footer"><p>&copy; 2026 Cupcake Shop. Todos os direitos reservados.</p></footer>
+
+  <!-- Fundo escurecido ao abrir o carrinho -->
+  <div class="cart-overlay" id="cart-overlay" hidden></div>
+
+  <!-- Carrinho lateral -->
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" inert>
+    <div class="cart-header">
+      <h2 id="cart-title">Meu carrinho</h2>
+      <button class="close-cart" type="button" aria-label="Fechar carrinho">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items" aria-live="polite">
+      <p class="empty-cart">Seu carrinho está vazio.</p>
+    </div>
+    <div class="cart-footer">
+      <p class="cart-total">Total: <strong id="cart-total">R$ 0,00</strong></p>
+      <button type="button" class="checkout-button" id="checkout-button" disabled>Finalizar pedido</button>
+      <p class="checkout-note">Pedidos simulados para demonstração acadêmica.</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="cart-toast" role="status" aria-live="polite"></div>
+</body>
+</html>

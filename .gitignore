@@ -1,0 +1,15 @@
+
+# Banco de dados local
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Arquivos temporários do Python
+__pycache__/
+*.pyc
+
+# Configurações e segredos
+.env
+.env.*
+
